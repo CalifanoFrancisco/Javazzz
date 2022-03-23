@@ -43,16 +43,15 @@ public class Main {
 //-------------------------------------------------------------------------
 	System.out.println("Setup listo :D");
 //-------------------------------------------------------------------------
-	/* 1 */ //libreria.compradoresFrecuentes();
+	/* 1 */ libreria.compradoresFrecuentes();
 	/* 2 */ libreria.librosMasVendidos();
-
-	/* 3 */ //libreria.compradoresFrecuentesEdad();
-	/* 4 */ //libreria.librosMasCaros();	
-	/* 5 */ //libreria.ventaLibro(l2);
-	/* 6 */ //libreria.ordenarPorLetra();
-	/* 7 */ //libreria.precioFinal(c2);	// 
-	/* 8 */	//l1.setPriceWDiscount(1000, 25);
-	/* 9 */ //libreria.descuentosNavidad();
+	/* 3 */ libreria.compradoresFrecuentesEdad();
+	/* 4 */ libreria.librosMasCaros();	
+	/* 5 */ libreria.ventaLibro(l2);
+	/* 6 */ libreria.ordenarPorLetra();
+	/* 7 */ libreria.precioFinal(c2);	// 
+	/* 8 */	l1.setPriceWDiscount(1000, 25);
+	/* 9 */ libreria.descuentosNavidad();
 //-------------------------------------------------------------------------
 	System.out.println("Programa terminad :(");
 
