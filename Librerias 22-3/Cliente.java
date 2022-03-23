@@ -47,7 +47,7 @@ public class Cliente {
 
     public void libroIdSetter(){
         for(int i=0;i<libros.size();i++){
-            this.libros.get(i).setId(i);
+            libros.get(i).setId(i);
         }
     }
 
@@ -64,9 +64,16 @@ public class Cliente {
         System.out.println("");
     }
 
-    public int totalLibro(){
-        for(int i=0;i<libros.size();i++){
-            
-        }
+    public String nombreLibro(int id){
+        return libros.get(id).getNombre();
     }
+
+    public String editorialLibro(int id){
+        return libros.get(id).getEditorial();
+    }
+
+    public float precioLibrosComprados(int id){
+        return libros.get(id).getPrecio();
+    }
+
 }
