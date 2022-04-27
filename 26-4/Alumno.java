@@ -82,5 +82,37 @@ public class Alumno extends Persona{
             System.out.println(materia+": "+notasPorMateria.get(materia).get(i));
         }
     }
+     public Float mayorNotaTodasMaterias(ArrayList<String> materias){
+        Float maximo=100.f,aux;
+
+        for (int i = 0; i < materias.size(); i++) {
+            aux = mayorNota(materias.get(i));
+            if(aux>maximo){
+                maximo=aux;
+            }
+        }
+        return maximo;
+    }
+
+    public Float menorNotaTodasMaterias(ArrayList<String> materias){
+        Float menor=100.f,aux;
+
+        for (int i = 0; i < materias.size(); i++) {
+            aux = mayorNota(materias.get(i));
+            if(aux<menor){
+                menor=aux;
+            }
+        }
+        return menor;
+    }
+
+    public Float promedioTodasMaterias(ArrayList<String> materias){
+        Float promedio;
+        int divisor = materias.size();
+        for (int i = 0; i < materias.size(); i++) {
+            promedio =+ promedioNotas(materias.get(i));
+        }
+        return promedio;
+    }
 
 }
