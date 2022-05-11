@@ -41,8 +41,8 @@ public class Banco {
         if(clientes.get(i).getcbu() == clientes.get(j).getcbu()){
           visitas++;
         }
+        aux.put(clientes.get(i).getcbu(),visitas);
       }
-      aux.put(clientes.get(i).getcbu(),visitas);
 
     }
 
