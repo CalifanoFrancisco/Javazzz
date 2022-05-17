@@ -26,6 +26,8 @@ public class TarjetaEquis {
   public float getsaldo(){ return this.saldo;}
   public float getsaldoNegativoMaximo(){ return this.saldoNegativoMaximo;}
   public int   getnumeroId(){ return this.numeroId;}
+  public ArrayList<Viaje> getViajes(){  return this.viajes; }
+  public Viaje getViaje(int i){ return this.viajes.get(i);  }
 
 
   public void setsaldo(float saldo){ this.saldo = saldo; }
@@ -41,12 +43,21 @@ public class TarjetaEquis {
 */
 
   public void cargarSube(float monto){      this.saldo+=monto;      }
-  public void realizarViaje(Viaje viaje){   
-    this.viajes.add(viaje);
-    this.saldo-=viaje.getPrecio();  
-  }
+  public void realizarViaje(Viaje viaje){   this.viajes.add(viaje); }
   public Float ultimoMontoAbonado(){   
     return this.viajes.get(this.viajes.size()).getprecio();
+  }
+
+  public String to_string(Viaje viaje){
+    String aux;
+    aux = viaje.toString()+" | Precio: "+this.saldo;
+    return aux;
+  }
+
+  public String to_String_altaCohesion(Viaje viaje){
+    String aux;
+    aux ="Hora: "+viaje.gethora()+" | Fecha: "+viaje.getfecha()+" | Precio: "+viaje.getprecio()+" | Precio: "+this.saldo;
+    return aux;
   }
 
   }
