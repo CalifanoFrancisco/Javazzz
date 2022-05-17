@@ -1,6 +1,7 @@
 
 //import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Sistema {
   private ArrayList<Pasajero> pasajerosPresentes;
@@ -43,7 +44,23 @@ public class Sistema {
     }
   
     public void seBajaPasajero(Pasajero pasajero){
-      
+      pasajerosPresentes.remove(pasajero);
+      historialDePasajeros.add(pasajero);
     }
-  }
+
+    public ArrayList<Pasajero> pasajerosQueSeHanSubidoAlgunaVez(){
+      return historialDePasajeros;
+    }
+
+    public HashMap<Pasajero,Float> pasajerosConUltimoMontoAbonado(){
+      HashMap<Pasajero,Float> aux = new HashMap<Pasajero,Float>();
+      for (int i = 0; i < historialDePasajeros.size(); i++) {
+        Pasajero e = historialDePasajeros.get(i);
+        float monto = e.getTarjeta().getViaje(e.getTarjeta().getViajes().size()).getprecio();
+        aux.put(e, monto);
+      }
+      return aux;
+    }
+  
+}
 
