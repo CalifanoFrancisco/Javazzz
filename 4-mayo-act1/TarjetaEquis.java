@@ -41,7 +41,10 @@ public class TarjetaEquis {
 */
 
   public void cargarSube(float monto){      this.saldo+=monto;      }
-  public void realizarViaje(Viaje viaje){   this.viajes.add(viaje); }
+  public void realizarViaje(Viaje viaje){   
+    this.viajes.add(viaje);
+    this.saldo-=viaje.getPrecio();  
+  }
   public Float ultimoMontoAbonado(){   
     return this.viajes.get(this.viajes.size()).getprecio();
   }
