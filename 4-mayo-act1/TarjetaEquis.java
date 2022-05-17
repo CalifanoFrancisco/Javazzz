@@ -59,6 +59,13 @@ public class TarjetaEquis {
     aux ="Hora: "+viaje.gethora()+" | Fecha: "+viaje.getfecha()+" | Precio: "+viaje.getprecio()+" | Precio: "+this.saldo;
     return aux;
   }
+  
+  public boolean seSuperaElSaldoNegativo(Pasajero pasajero){
+    if(pasajero.getTarjeta().getsaldo()<pasajero.getTarjeta().getsaldoNegativoMaximo()){
+        return true;
+    }
+    return false;
+  }
 
   }
 
