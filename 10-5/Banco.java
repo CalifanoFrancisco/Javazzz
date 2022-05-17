@@ -48,5 +48,11 @@ public class Banco {
 
     return aux;
   }
+  public void printHashMap(HashMap<Integer,Integer> aux){
+      for(Integer i:aux.keySet()){
+        System.out.println("Cbu: "+aux.values+" | valor: "+aux.keySet());
+      }
+  }
+  
   }
 
