@@ -9,14 +9,18 @@ public class Ticket{
     private Caja caja;
     private Cajero cajero;
 
-    public Ticket(Banco banco,Registro registro,Caja caja,Float saldo_restante){
+    public Ticket(Banco banco,Registro registro,CajaAutomatica caja,Float saldo_restante){
         this.banco = banco;
         this.operacion = registro;
         this.saldo_restante = saldo_restante;
         this.caja = caja;
-        if(caja.isPersona()){
-            this.cajero = caja.getCajero();
-        }
+    }
+    public Ticket(Banco banco,Registro registro,CajaPersona caja,Float saldo_restante){
+        this.banco = banco;
+        this.operacion = registro;
+        this.saldo_restante = saldo_restante;
+        this.caja = caja;
+        this.cajero = caja.getCajero();
     }
     public Ticket(){}
 }

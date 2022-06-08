@@ -1,8 +1,3 @@
-
-import java.util.Scanner;
-
-import javax.print.DocFlavor.READER;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -69,7 +64,16 @@ public class Banco {
     return false;
   }
 
-  public Ticket addDineroCliente(Cliente cliente,Caja caja,Float i){
+  public Ticket addDineroCliente(Cliente cliente,CajaAutomatica caja,Float i){
+    if(this.isInClientes(cliente)){
+      cliente.addDinero(i);
+      Registro aux = new Registro(cliente.getUsuario(),this.direccion, i, "dinero depositado");
+      registro.add(aux);
+      return new Ticket(this, aux,caja, cliente.getDinero());
+    }
+    return new Ticket();
+  }
+  public Ticket addDineroCliente(Cliente cliente,CajaPersona caja,Float i){
     if(this.isInClientes(cliente)){
       cliente.addDinero(i);
       Registro aux = new Registro(cliente.getUsuario(),this.direccion, i, "dinero depositado");
@@ -79,7 +83,16 @@ public class Banco {
     return new Ticket();
   }
 
-  public Ticket subDineroCliente(Cliente cliente,Caja caja,Float i){
+  public Ticket subDineroCliente(Cliente cliente,CajaAutomatica caja,Float i){
+    if(this.isInClientes(cliente)){
+      cliente.subDinero(i);
+      Registro aux = new Registro(cliente.getUsuario(),this.direccion, i, "dinero retirado");
+      registro.add(aux);
+      return new Ticket(this,aux,caja,cliente.getDinero());
+    }
+    return new Ticket();
+  }
+  public Ticket subDineroCliente(Cliente cliente,CajaPersona caja,Float i){
     if(this.isInClientes(cliente)){
       cliente.subDinero(i);
       Registro aux = new Registro(cliente.getUsuario(),this.direccion, i, "dinero retirado");
@@ -89,7 +102,7 @@ public class Banco {
     return new Ticket();
   }
 
-  public Ticket crearCuenta(Cliente cliente,Caja caja,String userName,String clave){
+  public Ticket crearCuenta(Cliente cliente,CajaAutomatica caja,String userName,String clave){
     if(!this.isInClientes(cliente)){
       clientes_.put(cliente,new Usuario(userName, clave));
       clientes.add(cliente);
@@ -99,7 +112,16 @@ public class Banco {
     }
     return new Ticket();
   }
-
+  public Ticket crearCuenta(Cliente cliente,CajaPersona caja,String userName,String clave){
+    if(!this.isInClientes(cliente)){
+      clientes_.put(cliente,new Usuario(userName, clave));
+      clientes.add(cliente);
+      Registro aux = new Registro(cliente.getUsuario(), this.direccion, 0, "crear cuenta");
+      registro.add(aux);
+      return new Ticket(this,aux,caja,cliente.getDinero());
+    }
+    return new Ticket();
+  }
 
 }
 
