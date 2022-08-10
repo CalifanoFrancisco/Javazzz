@@ -13,5 +13,10 @@ public class Pelicula {
         this.edadMinima = 18;
         this.director   = new Director();
     }
+    
+    public int      getEdadMinima(){  return this.edadMinima;   }
+    public int      getDuracion()  {  return this.duracion;     }
+    public String   getTitulo()    {  return this.titulo;       }
+    public Director getDirector()  {  return this.director;     }
 
 }   

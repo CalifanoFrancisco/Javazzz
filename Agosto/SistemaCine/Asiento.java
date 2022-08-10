@@ -10,6 +10,11 @@ public class Asiento {
         this.fila    =  0;
         this.ocupado = false;
     }
+    public Asiento(int fila){
+        this.columna = "A";
+        this.fila    =  0;
+        this.ocupado = false;
+    }
 
     public void setFila   (int     i){  this.fila    = i;   }
     public void setColumna(String  i){  this.columna = i;   }
