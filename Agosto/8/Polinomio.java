@@ -13,6 +13,8 @@ public class Polinomio {
     public HashSet<Double> resolvente(){
         HashSet<Double> out = new HashSet<>();
         
+        double det = Math.sqrt(b*b-4*a*c);
+        
         out.add((-b+Math.sqrt(b*b-4*a*c))/2*a);
         out.add((-b-Math.sqrt(b*b-4*a*c))/2*a);
 
@@ -25,5 +27,15 @@ public class Polinomio {
             System.out.println("X"+num+": "+ i);
             num++;
         }
+    }
+    public HashSet<Double> resolventeOptimizado(){
+        HashSet<Double> out = new HashSet<>();
+        
+        double det = Math.sqrt(b*b-4*a*c);
+        
+        out.add((-b+det)/(2*a));
+        out.add((-b-det)/(2*a));
+
+        return out;
     }
 }
