@@ -1,0 +1,5 @@
+package ONG;
+
+public enum Materia {
+    MATEMATICA,LENGUA,GEOGRAFIA,DIBUJO_TECNICO,PROGRAMACION;
+}
