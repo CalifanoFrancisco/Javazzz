@@ -1,0 +1,3 @@
+public enum Especialidad {
+    CIRUJANO, OFTALMOLOGO, OTORRINOLARINGOLOGO;
+}
